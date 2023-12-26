@@ -60,3 +60,21 @@ void *entropy(void *arg) {
 
   return NULL;
 }
+
+int main() {
+  std::vector<std::string> inputs;
+  std::string line;
+
+  // Read lines from standard input to get task scheduling information
+  while (std::getline(std::cin, line)) {
+    if (line.empty()) {
+      break;
+    }
+    inputs.push_back(line);
+  }
+
+  
+
+  return 0;
+  
+}

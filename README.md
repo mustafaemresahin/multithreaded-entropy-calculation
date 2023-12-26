@@ -6,4 +6,8 @@ This repository contains my implementation of a multithreaded incremental entrop
 ## Objective
 The aim of this assignment is to create a multithreaded version of the incremental entropy algorithm. The program reads a series of strings representing task scheduling information of CPUs in a multiprocessor system and calculates the entropy at each scheduling instant using POSIX threads.
 
+## Features
+- **Multithreading**: Utilizes POSIX threads for concurrent entropy calculations.
+- **Dynamic Input**: Reads scheduling information from STDIN.
+- **Efficient Entropy Calculation**: Implements Dr. Rincon's incremental entropy algorithm.
 

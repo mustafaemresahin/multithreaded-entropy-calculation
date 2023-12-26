@@ -89,7 +89,31 @@ int main() {
     pthread_join(tid[i], NULL);
   }
 
-  
+  // Output the results
+  for (size_t i = 0; i < inputs.size(); i++) {
+    std::cout << "CPU " << (i + 1) << std::endl;
+    std::cout << "Task scheduling information: ";
+
+    std::istringstream iss(inputs[i]);
+    char task;
+    int time;
+    bool first = true;
+
+    // Display the task scheduling information
+    while (iss >> task >> time) {
+      if (!first)
+        std::cout << ", ";
+      std::cout << task << "(" << time << ")";
+      first = false;
+    }
+
+    std::cout << std::endl << "Entropy for CPU " << (i + 1) << std::endl;
+    // Display the calculated entropy values for the CPU
+    for (auto &e : entropies[i]) {
+      std::cout << std::fixed << std::setprecision(2) << e << ' ';
+    }
+    std::cout << std::endl << std::endl;
+  }
 
   return 0;
   

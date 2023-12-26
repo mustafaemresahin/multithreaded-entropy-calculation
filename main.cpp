@@ -36,3 +36,27 @@ double calc_incremental_entropy(std::map<char, int> &freq, int &currFreq, double
 
   return H;
 };
+
+// Thread function to calculate entropy
+void *entropy(void *arg) {
+  ThreadData *data = (ThreadData *)arg;
+  std::istringstream iss(data->input);
+  char selectedTask;
+  int extraFreq;
+  std::map<char, int> freq;
+  int currFreq = 0;
+  double currH = 0.0;
+  int NFreq = 0;
+
+  // Parse the input and calculate entropy for each task
+  while (iss >> selectedTask >> extraFreq) {
+    if (freq.find(selectedTask) == freq.end()) {
+      freq[selectedTask] = 0;
+    }
+    double ent = calc_incremental_entropy(freq, currFreq, currH, selectedTask, extraFreq, NFreq);
+    freq[selectedTask] += extraFreq;
+    data->entropy->push_back(ent);
+  }
+
+  return NULL;
+}

@@ -6,3 +6,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+// Define a struct to hold thread data
+struct ThreadData {
+  std::string input;
+  std::vector<double> *entropy;
+};

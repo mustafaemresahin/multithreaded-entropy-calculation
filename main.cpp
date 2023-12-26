@@ -73,8 +73,12 @@ int main() {
     inputs.push_back(line);
   }
 
-  
+  // Initialize data structures for storing entropy values
+  std::vector<std::vector<double>> entropies(inputs.size());
+  std::vector<ThreadData> data(inputs.size());
+  std::vector<pthread_t> tid(inputs.size());
 
+  
   return 0;
   
 }

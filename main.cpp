@@ -78,6 +78,12 @@ int main() {
   std::vector<ThreadData> data(inputs.size());
   std::vector<pthread_t> tid(inputs.size());
 
+  // Create threads to calculate entropy for each CPU
+  for (int i = 0; i < inputs.size(); i++) {
+    data[i] = {inputs[i], &entropies[i]};
+    pthread_create(&tid[i], NULL, entropy, &data[i]);
+  }
+
   
   return 0;
   

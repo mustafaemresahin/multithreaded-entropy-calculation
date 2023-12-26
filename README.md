@@ -68,3 +68,6 @@ Entropy for CPU 1
 ## Dependencies
 - g++ compiler with support for C++11 or later.
 - POSIX threads library.
+
+## Acknowledgments
+Special thanks to Dr. Rincon for the foundational algorithm and for their guidance and support.

@@ -37,3 +37,17 @@ g++ -pthread -o entropyCalculator main.cpp
 ./entropyCalculator
 ```
 Input the scheduling information when prompted.
+
+
+## Input Format
+The program expects input in the following format:
+
+```bash
+[Task] [Execution Time] [Task] [Execution Time] ...
+```
+
+For example:
+
+```bash
+A 2 B 4 C 3 A 7
+```

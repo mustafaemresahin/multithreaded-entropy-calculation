@@ -84,7 +84,13 @@ int main() {
     pthread_create(&tid[i], NULL, entropy, &data[i]);
   }
 
+  // Wait for threads to complete
+  for (int i = 0; i < inputs.size(); i++) {
+    pthread_join(tid[i], NULL);
+  }
+
   
+
   return 0;
   
 }

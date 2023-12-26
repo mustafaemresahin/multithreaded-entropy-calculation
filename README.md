@@ -63,3 +63,8 @@ Task scheduling information: A(2), B(4), C(3), A(7)
 Entropy for CPU 1
 0.00 0.92 1.53 1.42
 ```
+
+
+## Dependencies
+- g++ compiler with support for C++11 or later.
+- POSIX threads library.
